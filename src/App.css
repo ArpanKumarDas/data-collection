@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  border: 0;
+  outline: none;
+  padding: 0;
+}
+
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+}
+
+.form {
+  padding: 50px;
+  max-width: 600px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 5px 5px 15px gray;
+
+}
+
+h1 {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  padding: 10px;
+  margin: 25px 5px 0px 0px;
+  width: 48%;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 900;
+  background-color: seagreen;
+  color: white;
+  cursor: pointer;
+  /* box-shadow: 3px 3px 5px gray; */
+
+  transition-duration: 300ms;
+}
+
+button:hover {
+  /* box-shadow: 1px 1px 3px gray; */
+  background-color: rgb(32, 100, 62);
+}
+
+label {
+  width: 100%;
+}
+
+input,
+select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.side-side {
+  display: flex;
+}
+
+.slider-top {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-lables {
+  font-weight: 200;
+  font-size: 13px;
+}
+
+.white-space {
+  height: 25px;
+}
+
+.question {
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: -12px;
+}
+
+.consent-row {
+  display: flex;
+  /* align-items: flex-end; */
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+
+.consent-row .consent-text {
+  width: 90%;
+  flex: 4;
+}
+
+.consent-row input[type=checkbox] {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  align-self: center;
+  height: 20px;
+}
