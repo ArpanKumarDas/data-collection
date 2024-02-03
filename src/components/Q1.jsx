@@ -97,6 +97,10 @@ const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
         console.log("q1");
     })
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <div className="q1">
             <button onClick={prev} > Back </button>
@@ -106,23 +110,25 @@ const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
             <div className="instructions">
                 <h2>Instructions</h2>
                 <p className="inst-text">
-                    This questionnaire is different from the usual questionnaires where you either use ticks or circles to denote your response. To fill out this questionnaire, you will have to <strong>draw lines</strong> to show the <strong> range of your agreement</strong> with the statements.
+                    This questionnaire is different from the usual questionnaires where you either use ticks or circles to denote your response. To fill out this questionnaire, you will have to <strong>drag pointers</strong> to show the <strong> range of your agreement</strong> with the statements.
                 </p>
 
                 <p className="inst-text">
-                    Each question in this questionnaire is followed by two horizontal lines that range from 0 to 100. The <u>upper line</u> represents the range that you <b>fully agree with</b>. For example, if you think a statement is between 55 to 65% true for you, draw a line from 55 to 65 on the upper line.
+                    Each question in this questionnaire is followed by two horizontal lines that range from 0 to 100. The <u>upper line</u> represents the range that you <b>fully agree with</b>. For example, if you think a statement is between 55 to 65% true for you, drag the pointers from 55 to 65 on the upper line.
                 </p>
 
                 <img src={slider1gif} alt="" />
 
                 <p className="inst-text">
-                    Next, the <u>lower line</u> represents the <i>limit</i> to which the statement is true for you. So, if you feel that while 55 to 65% best describes your agreement with the statement, it is <strong>never less than</strong> 45% true and <strong>never greater than</strong> 70% true, draw a line from 45 to 70 on the lower line.
+                    Next, the <u>lower line</u> represents the <i>limit</i> to which the statement is true for you. So, if you feel that while 55 to 65% best describes your agreement with the statement, it is <strong>never less than</strong> 45% true and <strong>never greater than</strong> 70% true, drag the pointers from 45 to 70 on the lower line.
                 </p>
 
                 <img src={slider2gif} alt="" />
 
+                <hr />
+
                 <p className="inst-text">
-                    The statements below inquire about your habits, feelings, and emotions. Consider each statement carefully. Then indicate to what extent it is true for you.
+                    <strong>The statements below inquire about your habits, feelings, and emotions. Consider each statement carefully. Then indicate <i>to what extent</i> it is true for you.</strong>
                 </p>
 
             </div>
