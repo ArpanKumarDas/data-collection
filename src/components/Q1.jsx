@@ -114,13 +114,13 @@ const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
                 </p>
 
                 <p className="inst-text">
-                    Each question in this questionnaire is followed by two horizontal lines that range from 0 to 100. The <u>upper line</u> represents the range that you <b>fully agree with</b>. For example, if you think a statement is between 55 to 65% true for you, drag the pointers from 55 to 65 on the upper line.
+                    Each question in this questionnaire is followed by two horizontal lines that range from 0 to 100. The <u>upper line</u> represents the range that you <b>fully agree with</b>. For example, if you think a statement is between 55 to 65% true for you, drag the pointers to 55 and 65 on the upper line.
                 </p>
 
                 <img src={slider1gif} alt="" />
 
                 <p className="inst-text">
-                    Next, the <u>lower line</u> represents the <i>limit</i> to which the statement is true for you. So, if you feel that while 55 to 65% best describes your agreement with the statement, it is <strong>never less than</strong> 45% true and <strong>never greater than</strong> 70% true, drag the pointers from 45 to 70 on the lower line.
+                    Next, the <u>lower line</u> represents the <i>limit</i> to which the statement is true for you. So, if you feel that while 55 to 65% best describes your agreement with the statement, it is <strong>never less than</strong> 45% true and <strong>never greater than</strong> 70% true, drag the pointers to 45 and 70 on the lower line.
                 </p>
 
                 <img src={slider2gif} alt="" />
