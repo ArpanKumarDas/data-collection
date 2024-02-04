@@ -99,11 +99,23 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
                 </label>
                 <label>
                     Phone number:
-                    <input type="tel" name="phno" value={initData.phno ?? ""} onChange={handleChange} required />
+                    <input type="tel" name="phno" value={initData.phno ?? ""} onChange={handleChange}
+                        pattern='[0-9]{10}'
+                        title="Please enter 10 digits"
+                        required
+                    />
                 </label>
                 <label>
                     Email ID:
-                    <input type="email" name="mail" value={initData.mail ?? ""} onChange={handleChange} required />
+                    <input type="email"
+                        name="mail"
+                        value={initData.mail ?? ""}
+                        onChange={handleChange}
+                        placeholder="username@email.com"
+                        pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                        title="Please match the format: username@email.com (make sure all characters are in lowercase)"
+                        required
+                    />
                 </label>
 
                 {/* make this hidden: phno */}
