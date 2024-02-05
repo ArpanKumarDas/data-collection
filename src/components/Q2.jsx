@@ -7,6 +7,11 @@ import slider2gif from '../assets/slider2.gif'
 const Q2 = ({ prevStep, nextStep, initData, setInitData, finalSubmit }) => {
     const next = e => {
         e.preventDefault()
+
+        if (error.length > 0) {
+            return
+        }
+
         setInitData(stateArray.map(value => value[0]))
         var answer = window.confirm("Finalise and submit?");
         if (answer) {
@@ -21,6 +26,7 @@ const Q2 = ({ prevStep, nextStep, initData, setInitData, finalSubmit }) => {
         prevStep()
     }
 
+    const [error, setError] = useState([])
     const [value1, setValue1] = useState(initData[0])
     const [value2, setValue2] = useState(initData[1])
     const [value3, setValue3] = useState(initData[2])
@@ -99,6 +105,16 @@ const Q2 = ({ prevStep, nextStep, initData, setInitData, finalSubmit }) => {
         window.scrollTo(0, 0)
     }, [])
 
+    useEffect(() => {
+        setError([])
+        console.log('rohan');
+        for (let idx in stateArray) {
+            if ((stateArray[idx][0][0][0] === 0 || stateArray[idx][0][0][1] === 100) || (stateArray[idx][0][1][0] === 0 || stateArray[idx][0][1][1] === 100)) {
+                setError((prevError) => [...prevError, Number(idx)])
+            }
+        }
+    }, [value1, value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15, value16, value17, value18, value19, value20, value21, value22, value23, value24, value25, value26, value27, value28, value29, value30, value31, value32, value33])
+
     return (
         <div className="q1">
             <button onClick={prev}>Back </button>
@@ -136,12 +152,17 @@ const Q2 = ({ prevStep, nextStep, initData, setInitData, finalSubmit }) => {
                     ques={ques2[key]}
                     qID={key + 1}
                     key={key + 1}
+                    error={error.includes(key) && 'error'}
                     state={value[0]}
                     handleChange={value[1]}
                 />
             ))}
 
-            {/* <button onClick={next}>Submit</button> */}
+            {
+                error.length > 0
+                    ? <div className="error">Error in few lines. Correct them before proceeding.</div>
+                    : <div></div>
+            }
             <button onClick={next}>Save data</button>
         </div>
 

@@ -111,10 +111,26 @@ select {
   height: 25px;
 }
 
+.question-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
 .question {
   font-size: 15px;
   font-weight: 300;
-  margin-bottom: -12px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  /* margin-bottom: -12px; */
+}
+
+.error {
+  font-weight: 500;
+  /* font-size: 15px; */
+
+  color: red;
 }
 
 .consent-row {

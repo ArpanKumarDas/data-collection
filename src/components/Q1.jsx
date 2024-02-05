@@ -8,8 +8,12 @@ import slider2gif from '../assets/slider2.gif'
 const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
     const next = (e) => {
         e.preventDefault()
-        setInitData(stateArray.map(value => value[0]))
 
+        if (error.length > 0) {
+            return
+        }
+
+        setInitData(stateArray.map(value => value[0]))
         nextStep()
     }
 
@@ -19,6 +23,7 @@ const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
         prevStep()
     }
 
+    const [error, setError] = useState([])
     const [value1, setValue1] = useState(initData[0])
     const [value2, setValue2] = useState(initData[1])
     const [value3, setValue3] = useState(initData[2])
@@ -101,6 +106,16 @@ const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
         window.scrollTo(0, 0)
     }, [])
 
+    useEffect(() => {
+        setError([])
+        console.log('rohan');
+        for (let idx in stateArray) {
+            if ((stateArray[idx][0][0][0] === 0 || stateArray[idx][0][0][1] === 100) || (stateArray[idx][0][1][0] === 0 || stateArray[idx][0][1][1] === 100)) {
+                setError((prevError) => [...prevError, Number(idx)])
+            }
+        }
+    }, [value1, value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15, value16, value17, value18, value19, value20, value21, value22, value23, value24, value25, value26, value27, value28, value29, value30, value31, value32, value33, value34, value35])
+
     return (
         <div className="q1">
             <button onClick={prev} > Back </button>
@@ -138,11 +153,17 @@ const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
                     ques={ques1[key]}
                     qID={key + 1}
                     key={key + 1}
+                    error={error.includes(key) && 'error'}
                     state={value[0]}
                     handleChange={value[1]}
                 />
             ))}
 
+            {
+                error.length > 0
+                    ? <div className="error">Error in few lines. Correct them before proceeding.</div>
+                    : <div></div>
+            }
             <button onClick={next}>Proceed to Questionnaire 2 </button>
         </div >
 

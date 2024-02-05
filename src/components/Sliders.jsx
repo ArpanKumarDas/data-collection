@@ -1,11 +1,10 @@
-import React, { memo } from 'react'
+import React, { memo, useState } from 'react'
 import Slider from '@mui/material/Slider'
 import { marks1, marks2 } from '../data/questionnaire'
+import ErrorIcon from '@mui/icons-material/Error';
+import Tooltip from '@mui/material/Tooltip';
 
-const Sliders = ({ qID, ques, state, handleChange }) => {
-    // useEffect(() => {
-    //     console.log("re rendered slider ", qID)
-    // })
+const Sliders = ({ qID, ques, state, handleChange, error }) => {
     const minDistance = 1
 
     const checkValues = (oldValues, newValues, sliderId) => {
@@ -35,9 +34,22 @@ const Sliders = ({ qID, ques, state, handleChange }) => {
         })
     }
 
+    const [tooltipOpen, setTooltipOpen] = useState(false);
+
+    const handleTooltipToggle = () => {
+        setTooltipOpen(!tooltipOpen);
+    };
+
     return (<label htmlFor="">
-        <div id={qID} className="question">
-            {qID + ". " + ques}
+        <div className={'question-row ' + error}>
+            <div id={qID} className={"question"}>
+                {qID + ". " + ques}
+            </div>
+            {error &&
+                <Tooltip title="Values should be greater than 0 and less than 100" arrow interactive open={tooltipOpen} onClick={handleTooltipToggle}>
+                    <ErrorIcon />
+                </Tooltip>
+            }
         </div>
         <div className='slider-top'>
             <span className='slider-lables'>False</span>
