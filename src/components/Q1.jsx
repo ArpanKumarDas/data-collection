@@ -4,10 +4,10 @@ import { ques1 } from '../data/questionnaire'
 import slider1gif from '../assets/slider1.gif'
 import slider2gif from '../assets/slider2.gif'
 
-
 const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
     const next = (e) => {
         e.preventDefault()
+        setSubmit(true)
 
         if (error.length > 0) {
             return
@@ -24,6 +24,7 @@ const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
     }
 
     const [error, setError] = useState([])
+    const [overOneSubmit, setSubmit] = useState(false)
     const [value1, setValue1] = useState(initData[0])
     const [value2, setValue2] = useState(initData[1])
     const [value3, setValue3] = useState(initData[2])
@@ -108,9 +109,8 @@ const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
 
     useEffect(() => {
         setError([])
-        console.log('rohan');
         for (let idx in stateArray) {
-            if ((stateArray[idx][0][0][0] === 0 || stateArray[idx][0][0][1] === 100) || (stateArray[idx][0][1][0] === 0 || stateArray[idx][0][1][1] === 100)) {
+            if (((stateArray[idx][0][0][0] === 0 && stateArray[idx][0][0][1] === 100)) || ((stateArray[idx][0][1][0] === 0 && stateArray[idx][0][1][1] === 100))) {
                 setError((prevError) => [...prevError, Number(idx)])
             }
         }
@@ -154,15 +154,15 @@ const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
                     qID={key + 1}
                     key={key + 1}
                     error={error.includes(key) && 'error'}
+                    overOneSubmit={overOneSubmit}
                     state={value[0]}
                     handleChange={value[1]}
                 />
             ))}
 
-            {
-                error.length > 0
-                    ? <div className="error">Error in few lines. Correct them before proceeding.</div>
-                    : <div></div>
+            {overOneSubmit && (error.length > 0)
+                ? <div className="error">Kindly provide responses to all the statements before proceeding.</div>
+                : <div></div>
             }
             <button onClick={next}>Proceed to Questionnaire 2 </button>
         </div >

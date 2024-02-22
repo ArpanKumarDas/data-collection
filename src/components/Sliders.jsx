@@ -4,7 +4,7 @@ import { marks1, marks2 } from '../data/questionnaire'
 import ErrorIcon from '@mui/icons-material/Error';
 import Tooltip from '@mui/material/Tooltip';
 
-const Sliders = ({ qID, ques, state, handleChange, error }) => {
+const Sliders = ({ qID, ques, state, handleChange, error, overOneSubmit }) => {
     const minDistance = 1
 
     const checkValues = (oldValues, newValues, sliderId) => {
@@ -41,12 +41,12 @@ const Sliders = ({ qID, ques, state, handleChange, error }) => {
     };
 
     return (<label htmlFor="">
-        <div className={'question-row ' + error}>
+        <div className={'question-row ' + (overOneSubmit ? error : '')}>
             <div id={qID} className={"question"}>
                 {qID + ". " + ques}
             </div>
-            {error &&
-                <Tooltip title="Values should be greater than 0 and less than 100" arrow interactive open={tooltipOpen} onClick={handleTooltipToggle}>
+            {overOneSubmit && error &&
+                <Tooltip title="Values should be greater than 0 or less than 100" arrow interactive open={tooltipOpen} onClick={handleTooltipToggle}>
                     <ErrorIcon />
                 </Tooltip>
             }

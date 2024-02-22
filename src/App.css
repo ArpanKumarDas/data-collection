@@ -154,13 +154,16 @@ select {
 }
 
 .instructions {
+  display: flex;
+  flex-direction: column;
   font-weight: 300;
   border-top: 2px solid #333;
   margin-bottom: 20px;
 }
 
 .instructions img {
-  width: 100%;
+  align-self: center;
+  width: 90%;
   border: 1px solid #333;
   /* box-shadow: 1px 1px 1px 1px #333; */
 }
