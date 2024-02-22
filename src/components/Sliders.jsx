@@ -46,7 +46,7 @@ const Sliders = ({ qID, ques, state, handleChange, error, overOneSubmit }) => {
                 {qID + ". " + ques}
             </div>
             {overOneSubmit && error &&
-                <Tooltip title="Values should be greater than 0 or less than 100" arrow interactive open={tooltipOpen} onClick={handleTooltipToggle}>
+                <Tooltip title="Kindly provide a response." arrow interactive open={tooltipOpen} onClick={handleTooltipToggle}>
                     <ErrorIcon />
                 </Tooltip>
             }
