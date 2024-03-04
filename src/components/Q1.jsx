@@ -143,7 +143,7 @@ const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
                 <hr />
 
                 <p className="inst-text">
-                    <strong>The statements below inquire about your habits, feelings, and emotions. Consider each statement carefully. Then indicate <i>to what extent</i> it is true for you.</strong>
+                    <strong>The statements below inquire about your habits, feelings, and emotions in the english class. Consider each statement carefully. Then indicate <i>to what extent</i> it is true for you.</strong>
                 </p>
 
             </div>
