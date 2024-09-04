@@ -10,9 +10,9 @@ const Q2 = ({ prevStep, nextStep, initData, setInitData, finalSubmit }) => {
     e.preventDefault();
     setSubmit(true);
 
-    // if (error.length > 0) {
-    //   return;
-    // }
+    if (error.length > 0) {
+      return;
+    }
 
     setInitData(stateArray.map((value) => value[0]));
     var answer = window.confirm("Finalise and submit?");
