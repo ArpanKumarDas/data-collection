@@ -42,12 +42,14 @@ const Form = () => {
 
     // questionnaire 1
     let q1FirebaseValues = {};
-    q1vals.map(
-      (values, index) =>
-        (q1FirebaseValues["q" + index] = {
-          slider1: values[0],
-          slider2: values[1],
-        })
+    console.log(q1vals);
+    q1vals.map((values, index) =>
+      typeof values[0] === "string"
+        ? (q1FirebaseValues[index] = values)
+        : (q1FirebaseValues[index] = {
+            slider1: values[0],
+            slider2: values[1],
+          })
     );
     console.log(q1FirebaseValues);
 
@@ -58,12 +60,14 @@ const Form = () => {
 
     // questionnaire 2
     let q2FirebaseValues = {};
-    q1vals.map(
-      (values, index) =>
-        (q2FirebaseValues["q" + index] = {
-          slider1: values[0],
-          slider2: values[1],
-        })
+    console.log(q2vals);
+    q1vals.map((values, index) =>
+      typeof values[0] === "string"
+        ? (q2FirebaseValues[index] = values)
+        : (q2FirebaseValues[index] = {
+            slider1: values[0],
+            slider2: values[1],
+          })
     );
     console.log(q1FirebaseValues);
 
