@@ -74,6 +74,8 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               name="degree"
               value={initData.degree ?? ""}
               onChange={handleChange}
+              pattern="[a-zA-Z\s,]*"
+              title="Please match the format: Only letters, spaces and commas allowed."
               required
             />
           </label>
@@ -84,6 +86,8 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               name="subject"
               value={initData.subject ?? ""}
               onChange={handleChange}
+              pattern="[a-zA-Z\s,]*"
+              title="Please match the format: Only letters, spaces and commas allowed."
               required
             />
           </label>
@@ -96,6 +100,8 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               name="board"
               value={initData.board ?? ""}
               onChange={handleChange}
+              pattern="[a-zA-Z\s,]*"
+              title="Please match the format: Only letters, spaces and commas allowed."
               required
             />
           </label>
@@ -106,6 +112,8 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               name="school_inst"
               value={initData.school_inst ?? ""}
               onChange={handleChange}
+              pattern="[a-zA-Z\s,]*"
+              title="Please match the format: Only letters, spaces and commas allowed."
               required
             />
           </label>
@@ -118,6 +126,8 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               name="first_lang"
               value={initData.first_lang ?? ""}
               onChange={handleChange}
+              pattern="[a-zA-Z\s,]*"
+              title="Please match the format: Only letters, spaces and commas allowed."
               required
             />
           </label>
@@ -128,22 +138,65 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               name="other_lang"
               value={initData.other_lang ?? ""}
               onChange={handleChange}
+              pattern="[a-zA-Z\s,]*"
+              title="Please match the format: Only letters, spaces and commas allowed."
               required
             />
           </label>
         </div>
         <label>
           State of domicile:
-          <input
-            type="text"
+          <select
             name="state"
             value={initData.state ?? ""}
             onChange={handleChange}
             required
-          />
+          >
+            <option value="" disabled hidden>
+              --Select--
+            </option>
+            <option value="andhrapradesh">Andhra Pradesh</option>
+            <option value="arunachalpradesh">Arunachal Pradesh</option>
+            <option value="assam">Assam</option>
+            <option value="bihar">Bihar</option>
+            <option value="chhattisgarh">Chhattisgarh</option>
+            <option value="goa">Goa</option>
+            <option value="gujarat">Gujarat</option>
+            <option value="haryana">Haryana</option>
+            <option value="himachalpradesh">Himachal Pradesh</option>
+            <option value="jharkhand">Jharkhand</option>
+            <option value="karnataka">Karnataka</option>
+            <option value="kerala">Kerala</option>
+            <option value="madhyapradesh">Madhya Pradesh</option>
+            <option value="maharashtra">Maharashtra</option>
+            <option value="manipur">Manipur</option>
+            <option value="meghalaya">Meghalaya</option>
+            <option value="mizoram">Mizoram</option>
+            <option value="nagaland">Nagaland</option>
+            <option value="odisha">Odisha</option>
+            <option value="punjab">Punjab</option>
+            <option value="rajasthan">Rajasthan</option>
+            <option value="sikkim">Sikkim</option>
+            <option value="tamilnadu">Tamil Nadu</option>
+            <option value="telangana">Telangana</option>
+            <option value="tripura">Tripura</option>
+            <option value="uttarpradesh">Uttar Pradesh</option>
+            <option value="uttarakhand">Uttarakhand</option>
+            <option value="westbengal">West Bengal</option>
+            <option value="andamanandnicobarislands">
+              Andaman and Nicobar Islands
+            </option>
+            <option value="chandigarh">Chandigarh</option>
+            <option value="dadhraandnagarhaveli">Dadra and Nagar Haveli</option>
+            <option value="damananddiu">Daman and Diu</option>
+            <option value="delhi">Delhi</option>
+            <option value="lakshadweep">Lakshadweep</option>
+            <option value="puducherry">Puducherry</option>
+            <option value="ladakh">Ladakh</option>
+          </select>
         </label>
         <label>
-          Parents level of education:
+          Parents' level of education:
           <input
             type="text"
             name="parent_edu"
