@@ -75,7 +75,7 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               value={initData.degree ?? ""}
               onChange={handleChange}
               pattern="[a-zA-Z\s,]*"
-              title="Please match the format: Only letters, spaces and commas allowed."
+              title="Only letters, spaces and commas allowed."
               required
             />
           </label>
@@ -87,7 +87,7 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               value={initData.subject ?? ""}
               onChange={handleChange}
               pattern="[a-zA-Z\s,]*"
-              title="Please match the format: Only letters, spaces and commas allowed."
+              title="Only letters, spaces and commas allowed."
               required
             />
           </label>
@@ -101,7 +101,7 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               value={initData.board ?? ""}
               onChange={handleChange}
               pattern="[a-zA-Z\s,]*"
-              title="Please match the format: Only letters, spaces and commas allowed."
+              title="Only letters, spaces and commas allowed."
               required
             />
           </label>
@@ -113,7 +113,7 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               value={initData.school_inst ?? ""}
               onChange={handleChange}
               pattern="[a-zA-Z\s,]*"
-              title="Please match the format: Only letters, spaces and commas allowed."
+              title="Only letters, spaces and commas allowed."
               required
             />
           </label>
@@ -127,7 +127,7 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               value={initData.first_lang ?? ""}
               onChange={handleChange}
               pattern="[a-zA-Z\s,]*"
-              title="Please match the format: Only letters, spaces and commas allowed."
+              title="Only letters, spaces and commas allowed."
               required
             />
           </label>
@@ -139,7 +139,7 @@ const PersonalInfo = ({ nextStep, values, initData, setInitData }) => {
               value={initData.other_lang ?? ""}
               onChange={handleChange}
               pattern="[a-zA-Z\s,]*"
-              title="Please match the format: Only letters, spaces and commas allowed."
+              title="Only letters, spaces and commas allowed."
               required
             />
           </label>
