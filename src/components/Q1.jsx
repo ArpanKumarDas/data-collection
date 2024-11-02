@@ -222,6 +222,7 @@ const Q1 = ({ prevStep, nextStep, initData, setInitData }) => {
             key={key + 1}
             state={value[0]}
             handleChange={value[1]}
+            required
           />
         ) : (
           <Sliders

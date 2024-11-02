@@ -43,14 +43,15 @@ const Form = () => {
     // questionnaire 1
     let q1FirebaseValues = {};
     console.log(q1vals);
-    q1vals.map((values, index) =>
-      typeof values[0] === "string"
+
+    q1vals.map((values, index) => {
+      typeof values === "string"
         ? (q1FirebaseValues[index] = values)
         : (q1FirebaseValues[index] = {
             slider1: values[0],
             slider2: values[1],
-          })
-    );
+          });
+    });
     console.log(q1FirebaseValues);
 
     const questionnaire1Ref = doc(db, "questionnaire1", docID);
@@ -61,15 +62,16 @@ const Form = () => {
     // questionnaire 2
     let q2FirebaseValues = {};
     console.log(q2vals);
-    q1vals.map((values, index) =>
-      typeof values[0] === "string"
+
+    q2vals.map((values, index) =>
+      typeof values === "string"
         ? (q2FirebaseValues[index] = values)
         : (q2FirebaseValues[index] = {
             slider1: values[0],
             slider2: values[1],
           })
     );
-    console.log(q1FirebaseValues);
+    console.log(q2FirebaseValues);
 
     const questionnaire2Ref = doc(db, "questionnaire2", docID);
     setDoc(questionnaire2Ref, q2FirebaseValues)

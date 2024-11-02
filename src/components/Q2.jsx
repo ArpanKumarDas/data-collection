@@ -218,6 +218,7 @@ const Q2 = ({ prevStep, nextStep, initData, setInitData, finalSubmit }) => {
             key={key + 1}
             state={value[0]}
             handleChange={value[1]}
+            required
           />
         ) : (
           <Sliders
