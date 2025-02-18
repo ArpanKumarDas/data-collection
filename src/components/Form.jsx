@@ -27,7 +27,8 @@ const Form = () => {
     setStep(step + 1);
   };
 
-  const finalSubmit = () => {
+  // taking q2vals as input, cuz state not updating fast enough, and old data going to db
+  const finalSubmit = (latestQ2Vals) => {
     // set loading
     setLoading(true);
 
@@ -44,13 +45,15 @@ const Form = () => {
     let q1FirebaseValues = {};
     console.log(q1vals);
 
-    q1vals.map((values, index) => {
-      typeof values === "string"
-        ? (q1FirebaseValues[index] = values)
-        : (q1FirebaseValues[index] = {
-            slider1: values[0],
-            slider2: values[1],
-          });
+    q1vals.forEach((values, index) => {
+      if (typeof values === "string") {
+        q1FirebaseValues[index] = values
+      } else {
+        q1FirebaseValues[index] = {
+          slider1: values[0],
+          slider2: values[1],
+        };
+      }
     });
     console.log(q1FirebaseValues);
 
@@ -63,13 +66,16 @@ const Form = () => {
     let q2FirebaseValues = {};
     console.log(q2vals);
 
-    q2vals.map((values, index) =>
-      typeof values === "string"
-        ? (q2FirebaseValues[index] = values)
-        : (q2FirebaseValues[index] = {
-            slider1: values[0],
-            slider2: values[1],
-          })
+    latestQ2Vals.forEach((values, index) => {
+      if (typeof values === "string") {
+        q2FirebaseValues[index] = values
+      } else {
+        q2FirebaseValues[index] = {
+          slider1: values[0],
+          slider2: values[1],
+        }
+      }
+    }
     );
     console.log(q2FirebaseValues);
 

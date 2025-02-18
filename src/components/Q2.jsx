@@ -14,10 +14,12 @@ const Q2 = ({ prevStep, nextStep, initData, setInitData, finalSubmit }) => {
       return;
     }
 
-    setInitData(stateArray.map((value) => value[0]));
+    const updatedValues = stateArray.map((value) => value[0])
+    setInitData(updatedValues)
+
     var answer = window.confirm("Finalise and submit?");
     if (answer) {
-      finalSubmit();
+      finalSubmit(updatedValues);
       nextStep();
     }
   };

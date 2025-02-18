@@ -1,9 +1,16 @@
-import './App.css';
-import Form from './components/Form';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Form from "./components/Form";
+import FormNew from "./components/FormNew";
 
 function App() {
   return (
-    <Form />
+    <Router>
+      <Routes>
+        <Route path="/data-collection" element={<Form />} />
+        <Route path="/q3" element={<FormNew />} />
+      </Routes>
+    </Router>
   );
 }
 
