@@ -8,7 +8,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/data-collection" element={<Form />} />
-        <Route path="/q3" element={<FormNew />} />
+        <Route path="/data-collection/q3" element={<FormNew />} />
       </Routes>
     </Router>
   );
