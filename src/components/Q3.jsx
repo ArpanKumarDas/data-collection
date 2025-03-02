@@ -206,7 +206,6 @@ const Q3 = ({ prevStep, nextStep, initData, setInitData, finalSubmit }) => {
         [value33, setValue33],
         [value34, setValue34],
         [value35, setValue35],
-        [value35, setValue35],
         [value36, setValue36],
         [value37, setValue37],
         [value38, setValue38],
