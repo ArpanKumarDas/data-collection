@@ -311,6 +311,8 @@ const Q3 = ({ prevStep, nextStep, initData, setInitData, finalSubmit }) => {
         [value137, setValue137],
     ];
 
+    // const stateArray = tempstateArray.slice(0, 5)
+
     useEffect(() => {
         console.log("q3");
     });

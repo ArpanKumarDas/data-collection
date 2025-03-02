@@ -12,7 +12,7 @@ const FormNew = () => {
   const [step, setStep] = useState(0);
   // const [q2vals, setq2Vals] = useState(q2values);
   const [q3vals, setq3Vals] = useState(q3values);
-  const [pInfo, setPInfo] = useState({ Consent: "Yes", phno: '1111' });
+  const [pInfo, setPInfo] = useState({});
   const [loading, setLoading] = useState(true);
 
   // go back to previous step
@@ -61,7 +61,7 @@ const FormNew = () => {
       <div className="form">
         {
           {
-            0: <ConsentFormNew nextStep={nextStep} values={step} />,
+            0: <ConsentFormNew nextStep={nextStep} values={step} initData={pInfo} setInitData={setPInfo} />,
             1: (
               <Q3
                 initData={q3vals}
