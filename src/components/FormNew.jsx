@@ -46,6 +46,7 @@ const FormNew = () => {
       }
     });
 
+    q3FirebaseValues = { ...pInfo, ...q3FirebaseValues }
     console.log(q3FirebaseValues);
 
     const questionnaire3Ref = doc(db, "questionnaire3", docID);
