@@ -36,7 +36,8 @@ const Form = () => {
     const docID = pInfo.phno;
 
     // personal info
-    const dataCollectionRef = doc(db, "user-details", docID);
+    // const dataCollectionRef = doc(db, "user-details", docID);
+    const dataCollectionRef = doc(db, "user-details-validation", docID);
     setDoc(dataCollectionRef, pInfo)
       .then((res) => console.log("firebase response", res))
       .catch((e) => console.log("ERROR IN STORING PERSONAL DATA", e));
@@ -57,7 +58,8 @@ const Form = () => {
     });
     console.log(q1FirebaseValues);
 
-    const questionnaire1Ref = doc(db, "questionnaire1", docID);
+    // const questionnaire1Ref = doc(db, "questionnaire1", docID);
+    const questionnaire1Ref = doc(db, "questionnaire1-validation", docID);
     setDoc(questionnaire1Ref, q1FirebaseValues)
       .then((res) => console.log("firebase response for q1", res))
       .catch((e) => console.log("ERROR IN STORING QUESTIONNAIRE 1 VALUES", e));
@@ -79,7 +81,8 @@ const Form = () => {
     );
     console.log(q2FirebaseValues);
 
-    const questionnaire2Ref = doc(db, "questionnaire2", docID);
+    // const questionnaire2Ref = doc(db, "questionnaire2", docID);
+    const questionnaire2Ref = doc(db, "questionnaire2-validation", docID);
     setDoc(questionnaire2Ref, q2FirebaseValues)
       .then((res) => console.log("firebase response for q2", res))
       .catch((e) => console.log("ERROR IN STORING QUESTIONNAIRE 2 VALUES", e));
