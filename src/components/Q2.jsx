@@ -171,45 +171,70 @@ const Q2 = ({ prevStep, nextStep, initData, setInitData, finalSubmit }) => {
       <h1>Questionnaire 2</h1>
 
       <div className="instructions">
-        <h2>Instructions</h2>
+        <h2 style={{ paddingBottom: '0px', marginBottom: '0px' }}>Instructions</h2>
+
         <p className="inst-text">
-          This questionnaire is different from the usual questionnaires where
-          you either use ticks or circles to denote your response. To fill out
-          this questionnaire, you will have to <strong>drag pointers</strong> to
-          show the <strong> range of your agreement</strong> with the
-          statements.
+          This questionnaire is different from the usual questionnaires, where
+          you either use ticks or circles to denote your response.
+
+          This questionnaire uses a unique response system to capture not just
+          your agreement, but also how much your feelings vary.
+
+          For each statement, you'll see two horizontal lines ranging from 0 to 100.
+          To fill out this questionnaire, you will have to drag pointers to show the range of your agreement with the statements.
         </p>
 
         <p className="inst-text">
-          Each question in this questionnaire is followed by two horizontal
-          lines that range from 0 to 100. The <u>upper line</u> represents the
-          range that you <b>fully agree with</b>. For example, if you think a
-          statement is between 55 to 65% true for you, drag the pointers to 55
-          and 65 on the upper line.
+          <h4 style={{ padding: '0px', margin: '0px' }}> UPPER LINE: Your Most Typical Agreement </h4>
+          This represents your core or most common level of agreement with the statement.
+          Drag the two pointers to show the range where you usually fall.
+          <br />
+          <br />
+          <i>
+            Example: If a statement is most typically 55-65% true for you, set the pointers at 55 and 65.
+          </i>
         </p>
 
         <img src={slider1gif} alt="" />
 
+
         <p className="inst-text">
-          Next, the <u>lower line</u> represents the <i>limit</i> to which the
-          statement is true for you. So, if you feel that while 55 to 65% best
-          describes your agreement with the statement, it is{" "}
-          <strong>never less than</strong> 45% true and{" "}
-          <strong>never greater than</strong> 70% true, drag the pointers to 45
-          and 70 on the lower line.
+          <h4 style={{ padding: '0px', margin: '0px' }}>LOWER LINE: Your Range of Variation</h4>
+          This captures the full spectrum of how true this statement can be for you across
+          different situations, moods, stress levels, or time periods.
+          Read the statement again and think about a time you felt this way: in your experience,
+          what was the lowest and highest intensity at which you felt it?
+          <br />
+          <br />
+          <i>Example: While your typical agreement with the statement is 55-65%, you recognise that on some days/in some situations,
+            your agreement with this statement would be as low as 45% while on other days/at other times, your agreement would be as high as 70%.
+            If so, set the pointers at 45 and 70.
+          </i>
         </p>
 
         <img src={slider2gif} alt="" />
 
-        <hr />
-
         <p className="inst-text">
-          <strong>
-            The statements below inquire about your habits, feelings, and
-            emotions in the english class. Consider each statement carefully.
-            Then indicate <i>to what extent</i> it is true for you.
-          </strong>
+
+          <h4 style={{ padding: '0px', margin: '0px' }}>Why Both Lines Matter: </h4>
+          Anxiety isn't constant - it changes based on stress, situations, health, etc.
+          <br />
+          The upper line shows your "normal" state; the lower line shows your full spectrum of possible responses.
+          This helps us understand both your typical anxiety AND how much it varies.
+          <br />
+          <br />
+          <i>
+            Remember: The lower line should always be wider than (or equal to) the upper line, since it represents your complete range of possible responses.
+          </i>
         </p>
+
+        <hr style={{ padding: '0px', margin: '0px', marginBottom: '20px' }} />
+
+        <h4 style={{ padding: '0px', margin: '0px' }}>
+          The statements below inquire about your habits, feelings, and
+          emotions in the English class. Consider each statement carefully.
+          Then indicate <i>to what extent</i> it is true for you.
+        </h4>
       </div>
 
       {stateArray.map((value, key) => {
